@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title></title>
+<meta charset="utf-8"/>
+<meta content="width=device-width" name="viewport"/>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css"/>
+<style>
+		.bee-form .bee-form-row .bee-field button {
+			font-family: inherit;
+			font-size: inherit
+		}
+
+		.bee-button .content,
+		.bee-row-4 .bee-col-1 .bee-block-1 {
+			text-align: center
+		}
+
+		.bee-menu .bee-hamburger-controls span,
+		.bee-row-1,
+		.bee-row-2,
+		.bee-row-3,
+		.bee-row-4,
+		.bee-row-7 {
+			background-repeat: no-repeat
+		}
+
+		.bee-row-1 .bee-col-2 .bee-block-1,
+		.bee-row-2 .bee-col-2 .bee-block-4 {
+			font-family: Montserrat, 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif
+		}
+
+		body {
+			background-color: #000;
+			color: #000;
+			font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif
+		}
+
+		a {
+			color: #ad97e2
+		}
+
+		* {
+			box-sizing: border-box
+		}
+
+		body,
+		h1,
+		h2,
+		p {
+			margin: 0
+		}
+
+		.bee-menu .bee-hamburger-trigger {
+			display: none
+		}
+
+		.bee-row-content {
+			max-width: 1440px;
+			margin: 0 auto;
+			display: flex
+		}
+
+		.bee-row-content .bee-col-w3 {
+			flex-basis: 25%
+		}
+
+		.bee-row-content .bee-col-w4 {
+			flex-basis: 33%
+		}
+
+		.bee-row-content .bee-col-w5 {
+			flex-basis: 42%
+		}
+
+		.bee-row-content .bee-col-w6 {
+			flex-basis: 50%
+		}
+
+		.bee-row-content .bee-col-w7 {
+			flex-basis: 58%
+		}
+
+		.bee-row-2 .bee-col-2 .bee-block-4 div.label:not(.inline),
+		.bee-row-2 .bee-col-2 .bee-block-4 label:not(.inline),
+		.bee-row-5 .bee-col-3 .bee-block-4 div.label:not(.inline),
+		.bee-row-5 .bee-col-3 .bee-block-4 label:not(.inline),
+		.bee-row-content .bee-col-w12 {
+			flex-basis: 100%
+		}
+
+		.bee-button a,
+		.bee-icon .bee-icon-label-right a,
+		.bee-menu ul li a {
+			text-decoration: none
+		}
+
+		.bee-divider,
+		.bee-image {
+			overflow: auto
+		}
+
+		.bee-divider .center,
+		.bee-image .bee-center {
+			margin: 0 auto
+		}
+
+		.bee-row-1 .bee-col-1 .bee-block-1 {
+			width: 100%
+		}
+
+		.bee-form .bee-form-row .bee-field {
+			padding: 3px;
+			display: flex;
+			flex: 1;
+			flex-wrap: wrap;
+			align-content: flex-start
+		}
+
+		.bee-form .bee-form-row .bee-field input:not([type=checkbox]):not([type=radio]) {
+			flex-grow: 1;
+			font-family: inherit;
+			font-size: inherit
+		}
+
+		.bee-form .bee-form-row .bee-field .bee-button-container {
+			flex-grow: 1
+		}
+
+		.bee-form input[type=color] {
+			border: none;
+			height: 38px
+		}
+
+		.bee-form input[type=color]::-webkit-color-swatch-wrapper {
+			margin: 0;
+			padding: 2px
+		}
+
+		.bee-form input[type=color]::-webkit-color-swatch {
+			margin: 0;
+			padding: 0
+		}
+
+		.bee-icon,
+		.bee-icon .bee-icon-image,
+		.bee-icon .bee-icon-label-right,
+		.bee-menu ul.bee-horizontal li {
+			display: inline-block
+		}
+
+		.bee-icon {
+			vertical-align: middle
+		}
+
+		.bee-icon .bee-icon-image {
+			vertical-align: middle;
+			margin-right: -4px
+		}
+
+		.bee-image img {
+			display: block;
+			width: 100%
+		}
+
+		.bee-menu .bee-hamburger-controls {
+			cursor: pointer;
+			display: inline-block;
+			position: relative
+		}
+
+		.bee-menu .bee-hamburger-controls span {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			background-size: 100%;
+			transition: .12s ease-in-out
+		}
+
+		.bee-menu ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0
+		}
+
+		.bee-social .icon img {
+			max-height: 32px
+		}
+
+		.bee-text {
+			overflow-wrap: anywhere
+		}
+
+		.bee-row-1 {
+			background-color: #72c050
+		}
+
+		.bee-row-1 .bee-row-content,
+		.bee-row-2 .bee-row-content {
+			background-color: #72c050;
+			background-repeat: no-repeat;
+			color: #000
+		}
+
+		.bee-row-1 .bee-col-1 {
+			padding: 15px 20px 10px
+		}
+
+		.bee-row-1 .bee-col-2 {
+			padding: 25px 20px 20px
+		}
+
+		.bee-row-1 .bee-col-2 .bee-block-1 {
+			color: #fff;
+			font-size: 19px;
+			letter-spacing: 2px;
+			text-align: right
+		}
+
+		.bee-row-2 .bee-col-1 .bee-block-1,
+		.bee-row-2 .bee-col-2 .bee-block-1 {
+			text-align: center;
+			width: 100%
+		}
+
+		.bee-row-2 .bee-col-2 {
+			padding: 40px
+		}
+
+		.bee-row-2 .bee-col-2 .bee-block-2,
+		.bee-row-2 .bee-col-2 .bee-block-3,
+		.bee-row-5 .bee-col-1 .bee-block-4,
+		.bee-row-5 .bee-col-3 .bee-block-3 {
+			padding: 10px
+		}
+
+		.bee-row-2 .bee-col-2 .bee-block-4 {
+			font-size: 13px;
+			text-align: center;
+			width: 75%;
+			margin: 0 auto
+		}
+
+		.bee-row-3 .bee-row-content,
+		.bee-row-4 .bee-row-content,
+		.bee-row-5 .bee-row-content {
+			background-color: #feffff;
+			background-repeat: no-repeat;
+			color: #000
+		}
+
+		.bee-row-5,
+		.bee-row-6,
+		.bee-row-6 .bee-row-content {
+			background-color: #000;
+			background-repeat: no-repeat
+		}
+
+		.bee-row-3 .bee-col-1 {
+			padding: 40px 20px
+		}
+
+		.bee-row-4 .bee-col-1 {
+			padding: 20px 20px 40px
+		}
+
+		.bee-row-5 .bee-col-1,
+		.bee-row-5 .bee-col-2,
+		.bee-row-5 .bee-col-3,
+		.bee-row-7 .bee-col-1 {
+			padding-bottom: 5px;
+			padding-top: 5px
+		}
+
+		.bee-row-5 .bee-col-1 .bee-block-2 {
+			padding: 10px;
+			width: 100%
+		}
+
+		.bee-row-5 .bee-col-1 .bee-block-3 {
+			padding: 10px;
+			text-align: center
+		}
+
+		.bee-row-5 .bee-col-2 .bee-block-2 {
+			color: #fff;
+			font-family: inherit;
+			font-size: 14px;
+			letter-spacing: 2px;
+			padding-bottom: 10px;
+			padding-right: 20px;
+			padding-top: 10px;
+			text-align: left
+		}
+
+		.bee-row-5 .bee-col-3 .bee-block-2 {
+			padding-left: 20px;
+			padding-right: 20px;
+			text-align: center;
+			width: 100%
+		}
+
+		.bee-row-5 .bee-col-3 .bee-block-4 {
+			font-family: inherit;
+			font-size: 12px;
+			padding: 10px;
+			text-align: center;
+			width: 80%;
+			margin: 0 auto
+		}
+
+		.bee-row-6 .bee-row-content {
+			color: #000
+		}
+
+		.bee-row-6 .bee-col-1 {
+			padding-bottom: 20px;
+			padding-top: 40px
+		}
+
+		.bee-row-6 .bee-col-1 .bee-block-1 {
+			padding: 15px 10px
+		}
+
+		.bee-row-7 .bee-row-content {
+			background-repeat: no-repeat;
+			color: #000
+		}
+
+		.bee-row-7 .bee-col-1 .bee-block-1 {
+			color: #9d9d9d;
+			font-family: inherit;
+			font-size: 15px;
+			padding-bottom: 5px;
+			padding-top: 5px;
+			text-align: center
+		}
+
+		.bee-row-5 .bee-col-2 .bee-block-2 li {
+			padding: 5px 20px
+		}
+
+		.bee-row-5 .bee-col-2 .bee-block-2 li a {
+			color: #000
+		}
+
+		.bee-row-7 .bee-col-1 .bee-block-1 .bee-icon-image {
+			padding: 5px 6px 5px 5px
+		}
+
+		.bee-row-7 .bee-col-1 .bee-block-1 .bee-icon {
+			margin-left: 0;
+			margin-right: 0
+		}
+
+		.bee-row-1 .bee-col-2 .bee-block-1 li {
+			padding-left: 5px;
+			padding-right: 5px;
+			padding-top: 10px
+		}
+
+		.bee-row-1 .bee-col-2 .bee-block-1 li a {
+			color: #fff
+		}
+
+		@media (max-width:768px) {
+			.bee-form {
+				width: 100% !important
+			}
+
+			.bee-menu ul.with-bee-hamburger {
+				display: none;
+				padding: 5px 0;
+				position: relative;
+				top: -4px
+			}
+
+			.bee-menu ul.with-bee-hamburger li {
+				display: block;
+				text-align: center
+			}
+
+			.bee-menu ul.with-bee-hamburger li a {
+				text-decoration: none
+			}
+
+			.bee-menu ul.with-bee-hamburger span {
+				display: none
+			}
+
+			#bee-hamburger-m5hnbee:checked~ul,
+			.bee-row-content:not(.no_stack) {
+				display: block
+			}
+
+			.bee-row-5 .bee-col-2 .bee-block-2 .bee-hamburger-controls {
+				width: 36px;
+				height: 36px;
+				background-color: transparent;
+				border-radius: 0
+			}
+
+			.bee-row-1 .bee-col-2 .bee-block-1 .bee-hamburger-controls span,
+			.bee-row-5 .bee-col-2 .bee-block-2 .bee-hamburger-controls span {
+				width: 18px;
+				height: 18px
+			}
+
+			.bee-row-5 .bee-col-2 .bee-block-2 .bee-hamburger-controls span.bee-hamburger-open {
+				background-image: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjY0IiB2aWV3Qm94PSIwIDAgNjQgNjQiIHdpZHRoPSI2NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjNjI3MTZhIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxyZWN0IGhlaWdodD0iMTIiIHJ4PSI2IiB3aWR0aD0iNjQiLz48cmVjdCBoZWlnaHQ9IjEyIiByeD0iNiIgd2lkdGg9IjY0IiB5PSI1MiIvPjxyZWN0IGhlaWdodD0iMTIiIHJ4PSI2IiB3aWR0aD0iNjQiIHk9IjI2Ii8+PC9nPjwvc3ZnPg==");
+				transform: translate(-50%, -50%) scaleY(1)
+			}
+
+			.bee-row-5 .bee-col-2 .bee-block-2 .bee-hamburger-controls span.bee-hamburger-close {
+				background-image: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjY0IiB2aWV3Qm94PSIwIDAgNjQgNjQiIHdpZHRoPSI2NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjNjI3MTZhIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxyZWN0IGhlaWdodD0iMTIiIHJ4PSI2IiB0cmFuc2Zvcm09Im1hdHJpeCgtLjcwNzEwNjc4IC0uNzA3MTA2NzggLjcwNzEwNjc4IC0uNzA3MTA2NzggMzEuOTkxMzc4IDc3LjIzNDAxOSkiIHdpZHRoPSI4MiIgeD0iLTkuMDA4NjIyIiB5PSIyNS45OTEzNzgiLz48cmVjdCBoZWlnaHQ9IjEyIiByeD0iNiIgdHJhbnNmb3JtPSJtYXRyaXgoLS43MDcxMDY3OCAuNzA3MTA2NzggLS43MDcxMDY3OCAtLjcwNzEwNjc4IDc3LjgxOTgwNiAzMi4yMzQwMTkpIiB3aWR0aD0iODIiIHg9Ii04Ljc2NTk4MSIgeT0iMjYuMjM0MDE5Ii8+PC9nPjwvc3ZnPg==");
+				transform: translate(-50%, -50%) scaleY(0)
+			}
+
+			.bee-row-5 .bee-col-2 .bee-block-2 ul.with-bee-hamburger {
+				background-color: transparent
+			}
+
+			.bee-row-5 .bee-col-2 .bee-block-2 ul.with-bee-hamburger li,
+			.bee-row-5 .bee-col-2 .bee-block-2 ul.with-bee-hamburger li a {
+				color: #62716a
+			}
+
+			#bee-hamburger-m5hnbee:checked~.bee-hamburger-controls .bee-hamburger-open {
+				transform: translate(-50%, -50%) scaleY(0)
+			}
+
+			#bee-hamburger-m5hnbee:checked~.bee-hamburger-controls .bee-hamburger-close {
+				transform: translate(-50%, -50%) scaleY(1)
+			}
+
+			.bee-row-1 .bee-col-2 .bee-block-1 .bee-hamburger-controls {
+				width: 36px;
+				height: 36px;
+				background-color: #72c050;
+				border-radius: 0
+			}
+
+			.bee-row-1 .bee-col-2 .bee-block-1 .bee-hamburger-controls span.bee-hamburger-open {
+				background-image: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjY0IiB2aWV3Qm94PSIwIDAgNjQgNjQiIHdpZHRoPSI2NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjM2YyOTE4IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxyZWN0IGhlaWdodD0iMTIiIHJ4PSI2IiB3aWR0aD0iNjQiLz48cmVjdCBoZWlnaHQ9IjEyIiByeD0iNiIgd2lkdGg9IjY0IiB5PSI1MiIvPjxyZWN0IGhlaWdodD0iMTIiIHJ4PSI2IiB3aWR0aD0iNjQiIHk9IjI2Ii8+PC9nPjwvc3ZnPg==");
+				transform: translate(-50%, -50%) scaleY(1)
+			}
+
+			.bee-row-1 .bee-col-2 .bee-block-1 .bee-hamburger-controls span.bee-hamburger-close {
+				background-image: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjY0IiB2aWV3Qm94PSIwIDAgNjQgNjQiIHdpZHRoPSI2NCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjM2YyOTE4IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxyZWN0IGhlaWdodD0iMTIiIHJ4PSI2IiB0cmFuc2Zvcm09Im1hdHJpeCgtLjcwNzEwNjc4IC0uNzA3MTA2NzggLjcwNzEwNjc4IC0uNzA3MTA2NzggMzEuOTkxMzc4IDc3LjIzNDAxOSkiIHdpZHRoPSI4MiIgeD0iLTkuMDA4NjIyIiB5PSIyNS45OTEzNzgiLz48cmVjdCBoZWlnaHQ9IjEyIiByeD0iNiIgdHJhbnNmb3JtPSJtYXRyaXgoLS43MDcxMDY3OCAuNzA3MTA2NzggLS43MDcxMDY3OCAtLjcwNzEwNjc4IDc3LjgxOTgwNiAzMi4yMzQwMTkpIiB3aWR0aD0iODIiIHg9Ii04Ljc2NTk4MSIgeT0iMjYuMjM0MDE5Ii8+PC9nPjwvc3ZnPg==");
+				transform: translate(-50%, -50%) scaleY(0)
+			}
+
+			.bee-row-1 .bee-col-2 .bee-block-1 ul.with-bee-hamburger {
+				background-color: #72c050
+			}
+
+			.bee-row-1 .bee-col-2 .bee-block-1 ul.with-bee-hamburger li,
+			.bee-row-1 .bee-col-2 .bee-block-1 ul.with-bee-hamburger li a {
+				color: #3f2918
+			}
+		}
+
+		.bee-row-2 .bee-col-2 .bee-block-4 div.label,
+		.bee-row-2 .bee-col-2 .bee-block-4 label {
+			color: #feffff;
+			font-weight: 700;
+			letter-spacing: 1px;
+			line-height: 180%;
+			text-align: left;
+			display: block
+		}
+
+		.bee-row-2 .bee-col-2 .bee-block-4 div.label,
+		.bee-row-5 .bee-col-3 .bee-block-4 div.label {
+			padding: 3px
+		}
+
+		.bee-row-2 .bee-col-2 .bee-block-4 input:not([type=checkbox]):not([type=radio]):not([type=image]) {
+			background-color: #feffff;
+			border-bottom: 1px solid transparent;
+			border-left: 1px solid transparent;
+			border-radius: 15px;
+			border-right: 1px solid transparent;
+			border-top: 1px solid transparent;
+			color: #000;
+			padding: 10px
+		}
+
+		.bee-row-2 .bee-col-2 .bee-block-4 input:not([type=checkbox]):not([type=radio]):focus {
+			outline-color: #fff
+		}
+
+		.bee-row-2 .bee-col-2 .bee-block-4 button {
+			background-color: #56ef2a;
+			border-bottom: 0 solid transparent;
+			border-left: 0 solid transparent;
+			border-radius: 15px;
+			border-right: 0px solid transparent;
+			border-top: 0 solid transparent;
+			color: #000;
+			letter-spacing: 1px;
+			line-height: 200%;
+			padding: 10px 20px;
+			width: 100%
+		}
+
+		.bee-row-2 .bee-col-2 .bee-block-4 .bee-button-container {
+			padding-top: 10px;
+			text-align: "center"
+		}
+
+		.bee-row-5 .bee-col-3 .bee-block-4 div.label,
+		.bee-row-5 .bee-col-3 .bee-block-4 label {
+			color: #56ef2a;
+			font-weight: 700;
+			letter-spacing: 2px;
+			line-height: 120%;
+			text-align: center;
+			display: block
+		}
+
+		.bee-row-5 .bee-col-3 .bee-block-4 input:not([type=checkbox]):not([type=radio]):not([type=image]) {
+			background-color: #dedede;
+			border-bottom: 1px solid transparent;
+			border-left: 1px solid transparent;
+			border-radius: 4px;
+			border-right: 1px solid transparent;
+			border-top: 1px solid transparent;
+			color: #ad97e2;
+			padding: 5px
+		}
+
+		.bee-row-5 .bee-col-3 .bee-block-4 input:not([type=checkbox]):not([type=radio]):focus {
+			outline-color: #ad97e2
+		}
+
+		.bee-row-5 .bee-col-3 .bee-block-4 button {
+			background-color: #72c050;
+			border-bottom: 0 solid transparent;
+			border-left: 0 solid transparent;
+			border-radius: 4px;
+			border-right: 0px solid transparent;
+			border-top: 0 solid transparent;
+			color: #feffff;
+			line-height: 200%;
+			padding: 5px 20px;
+			width: 100%
+		}
+
+		.bee-row-5 .bee-col-3 .bee-block-4 .bee-button-container {
+			text-align: "center"
+		}
+	</style>
+
+
+<!--
+
+function formSubmit() {
+    if (document.myform.your_name.value == "") {
+      alert("Submit non effettuato. Inserisci almeno un carattere");
+      return false;
+    }
+    // Se è stato inserito un nome verrà effettuato il submit
+    document.myform.submit();
+    return true;
+  }
+
+
+  function operazione() { 
+document.getElementById("operazioni").value=eval(document.getElementById("operazioni").value); 
+
+function n(dato){ 
+   document.getElementById("operazioni").value+=dato;
+}
+
+ 
+
+<html> 
+<head> 
+<script language="javascript">
+function sum() {
+var a = parseInt(document.fsomma.t1.value);
+var b = parseInt(document.fsomma.t2.value);
+var c = a + b;
+document.fsomma.somma.value = c;
+}
+</script>
+</head> 
+<body> 
+<form name="fsomma">
+<input type="text" name="t1"> 
+<input type="text" name="t2"> 
+<input type="button" value="somma!" onClick="javascript:sum();">
+<input type="text" name="somma"> 
+</form>
+</body> 
+</html>
+
+
+
+
+value="somma!"
+
+
+
+function sum() {
+var pesoOlive = parseInt(document.myform.pesoOlive.value);
+var litriOlio = parseInt(document.myform.litriOlio.value);
+var resaOlive = pesoOlive + litriOlio;
+document.fsomma.somma.value = resaOlive;
+}
+
+	
+ 
+
+-->
+
+
+<script language="javascript">
+
+
+
+
+function sum() {
+var a = parseInt(document.fsomma.t1.value);
+var b = parseInt(document.fsomma.t2.value);
+var c = 100/a*b;
+document.fsomma.somma.value = c;
+}
+
+</script>
+
+
+
+
+</head>
+<body>
+<div class="bee-page-container">
+<div class="bee-row bee-row-1">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w5">
+<div class="bee-block bee-block-1 bee-image"><a href='&lt;a href="https://imgbb.com/"&gt;&lt;img src="https://i.ibb.co/hZN7zPf/resaolive-removebg-preview.png" alt="resaolive-removebg-preview" border="0"&gt;&lt;/a&gt;'><img alt="Your-Logo" class="bee-center bee-autowidth" src="images/4b7dbbf2-cd59-4a30-a570-5e73eb85beff.png" style="max-width:256px;"/></a></div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w7">
+<div class="bee-block bee-block-1 bee-menu">
+<nav class="bee-menu"><input class="bee-hamburger-trigger" id="bee-hamburger-m5hnbee" type="checkbox"/><label class="bee-hamburger-controls" for="bee-hamburger-m5hnbee"><span class="bee-hamburger-open"></span><span class="bee-hamburger-close"></span></label>
+<ul class="bee-horizontal with-bee-hamburger">
+<li><a href="http://www.example.com/" target="_self" title="">Blog</a></li><span>| </span>
+<li><a href="http://www.example.com/" target="_self" title="">Iscriviti alla newsletter</a></li><span>| </span>
+<li><a href="http://www.example.com/" target="_self" title="">Scopri di più</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-2">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w6">
+<div class="bee-block bee-block-1 bee-heading">
+<h1 style="color:#ffffff;direction:ltr;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:24px;font-weight:normal;letter-spacing:normal;line-height:120%;text-align:center;margin-top:0;margin-bottom:0;"><span style="color: #000000;">Calcola la resa in termini percentuali di olio ottenuti dalla molitura delle tue olive </span> </h1>
+</div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w6">
+<div class="bee-block bee-block-1 bee-heading">
+<h2 style="color:#ffffff;direction:ltr;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:18px;font-weight:normal;letter-spacing:normal;line-height:120%;text-align:center;margin-top:0;margin-bottom:0;"><span style="color: #000000;">inserisci qui i <span style="color: #ffffff;">kg di olive molite</span> e i <span style="color: #ffffff;">litri di olio ottenuti</span></span> </h2>
+</div>
+<div class="bee-block bee-block-2 bee-divider">
+<div class="center" style="border-top:1px solid #BBBBBB;width:100%;"></div>
+</div>
+<div class="bee-block bee-block-3 bee-divider">
+<div class="center" style="border-top:1px solid #72C050;width:100%;"></div>
+</div>
+<div class="bee-block bee-block-4 bee-form">
+
+
+
+
+
+<form name="fsomma">
+<input type="text" name="t1" placeholder="Kg di olive molite"> 
+<input type="text" name="t2" placeholder="Litri d'olio ottenuti"> 
+<div class="bee-button-container"><input type="button" value="Calcola resa %" onClick="javascript:sum();"></div>
+<div class="bee-button-container"><input type="text" name="somma" type="submit"></div>
+</form>
+
+<!--
+quasi originale ------<div class="bee-button-container"><input type="button" value="Calcola resa!" onClick="javascript:sum();"></div>
+
+
+<div class="bee-button-container"><button id="id_ly9yk8" name="submit" type="submit"  >CALCOLA RESA %</button></div>
+
+
+
+<form accept-charset="UTF-8" action="ACTION_PLACEHOLDER" autocomplete="on" enctype="multipart/form-data" method="post" target="_self" name="myform">
+<div class="bee-form-row">
+<div class="bee-field bee-field-id_dbtqbf"><label for="id_dbtqbf">Kg di olive molite</label><input id="id_dbtqbf" name="pesoOlive" placeholder="" required="" type="number"/></div>
+</div>
+<div class="bee-form-row">
+<div class="bee-field bee-field-id_7fmzfm"><label for="id_7fmzfm">Litri di olio ottenuti</label><input id="id_7fmzfm" name="litriOlio" placeholder="" required="" type="number"/></div>
+</div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row">
+<div class="bee-field bee-field-id_ly9yk8">
+<div class="bee-button-container"><button id="id_ly9yk8" name="submit" type="submit"  onClick="javascript:sum();" value="CALCOLA RESA %">CALCOLA RESA %</button></div>
+
+</div>
+</div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+</form>
+
+-->
+
+
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-3">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-text">
+<div class="bee-text-content" style="line-height: 120%; font-size: 12px; color: #ad97e2; font-family: inherit;">
+<p style="font-size: 14px; line-height: 16px; text-align: center; letter-spacing: 2px;"><span style="font-size: 22px; line-height: 26px; color: #72c050;">Calcolatore di resa online</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-4">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-button"><a class="bee-button-content" href="http://www.example.com/" style="font-size: 12px; line-height: 24px; background-color: #feffff; border-bottom: 3px solid #72C050; border-left: 3px solid #72C050; border-radius: 15px; border-right: 3px solid #72C050; border-top: 3px solid #72C050; color: #000000; font-family: inherit; max-width: 100%; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; padding-top: 10px; width: auto; display: inline-block;"><span style="font-size: 16px; line-height: 200%; word-break: break-word;"><span style="font-size: 18px; line-height: 36px;"><strong>scopri di più</strong> →</span></span></a></div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-5">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w5">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:35px;"></div>
+</div>
+<div class="bee-block bee-block-2 bee-image"><img alt="Your Logo" class="bee-center bee-fixedwidth" src="images/de2b301a-24fb-4899-8119-9226c91dd515.png" style="max-width:150px;"/></div>
+<div class="bee-block bee-block-3 bee-social">
+<div class="content"><span class="icon" style="padding:0 10px 0 10px;"><a href="https://www.facebook.com/"><img alt="Facebook" src="images/facebook2x.png" title="facebook"/></a></span><span class="icon" style="padding:0 10px 0 10px;"><a href="https://www.twitter.com/"><img alt="Twitter" src="images/twitter2x.png" title="twitter"/></a></span><span class="icon" style="padding:0 10px 0 10px;"><a href="https://www.instagram.com/"><img alt="Instagram" src="images/instagram2x.png" title="instagram"/></a></span><span class="icon" style="padding:0 10px 0 10px;"><a href="https://www.youtube.com/"><img alt="YouTube" src="images/youtube2x.png" title="YouTube"/></a></span><span class="icon" style="padding:0 10px 0 10px;"><a href="https://vimeo.com"><img alt="Vimeo" src="images/vimeo2x.png" title="Vimeo"/></a></span><span class="icon" style="padding:0 10px 0 10px;"><a href="https://www.tiktok.com"><img alt="TikTok" src="images/tiktok2x.png" title="TikTok"/></a></span></div>
+</div>
+<div class="bee-block bee-block-4 bee-divider">
+<div class="spacer" style="height:0px;"></div>
+</div>
+</div>
+<div class="bee-col bee-col-2 bee-col-w3">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:35px;"></div>
+</div>
+<div class="bee-block bee-block-2 bee-menu">
+<nav class="bee-menu">
+<ul class="bee-vertical">
+<li><a href="www.example.com" target="_self" title="">SUPPORT</a></li>
+<li><a href="www.example.com" target="_self" title="">FAQ</a></li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="bee-col bee-col-3 bee-col-w4">
+<div class="bee-block bee-block-1 bee-divider">
+<div class="spacer" style="height:10px;"></div>
+</div>
+<div class="bee-block bee-block-2 bee-heading">
+<h2 style="color:#ad97e2;direction:ltr;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;font-size:20px;font-weight:normal;letter-spacing:normal;line-height:120%;text-align:center;margin-top:0;margin-bottom:0;"><span style="color: #ffffff;">NEWSLETTER</span> </h2>
+</div>
+<div class="bee-block bee-block-3 bee-text">
+<div class="bee-text-content" style="font-size: 12px; line-height: 120%; font-family: inherit; color: #dedede;">
+<p style="text-align: center; line-height: 14px;">Iscriviti alla newsletter per rimanere aggiornato sui temi relativi alla raccolta e lavorazione delle olive e delle varietà regione per regione, dell'olio in termini di valore di mercato, news in merito a numeri relativi all'export ed innovazioni relativa a quest'industria.</p>
+</div>
+</div>
+
+<!-- newslwtter form da riabilitare
+
+<div class="bee-block bee-block-4 bee-form">
+<form accept-charset="UTF-8" action="ACTION_PLACEHOLDER" autocomplete="on" enctype="multipart/form-data" method="post" target="_self">
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row">
+<div class="bee-field bee-field-id_j384ko"><label for="id_j384ko">Email</label><input id="id_j384ko" name="email" required="" type="text"/></div>
+</div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row"></div>
+<div class="bee-form-row">
+<div class="bee-field bee-field-id_fm8jbu">
+<div class="bee-button-container"><button id="id_fm8jbu" name="submit" type="submit" value="ISCRIVITI ALLA NEW LETTER">ISCRIVITI ALLA NEW LETTER</button>
+
+-->
+
+
+<!-- Begin Mailchimp Signup Form -->
+
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7_dtp.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://avvality.us4.list-manage.com/subscribe/post?u=01358c3f211c5113fcf190b6e&amp;id=f973dac14a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+  
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Iscriviti alla Newsletter</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_01358c3f211c5113fcf190b6e_f973dac14a" tabindex="-1" value=""></div>
+        <div class="clear foot">
+           <input type="submit" value="ISCRIVITI" name="subscribe" id="mc-embedded-subscribe" class="button">
+        </div>
+	<p><a href="http://eepurl.com/hM2mAT" title="Mailchimp - email marketing made easy and fun"><img class="referralBadge" src=""></a></p>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+
+
+
+
+</div>
+</div>
+</div>
+</form>
+</div>
+<div class="bee-block bee-block-5 bee-divider">
+<div class="spacer" style="height:25px;"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-6">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-text">
+<div class="bee-text-content" style="line-height: 120%; font-size: 12px; color: #dedede; font-family: inherit;">
+<p style="font-size: 14px; line-height: 16px; text-align: center;"><em style="">2021 © All rights reserved</em></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bee-row bee-row-7">
+<div class="bee-row-content">
+<div class="bee-col bee-col-1 bee-col-w12">
+<div class="bee-block bee-block-1 bee-icons">
+<div class="bee-icon">
+<div class="bee-icon-image"><a href="" target="_blank" title=""><img alt="" height="32px" src="" width="auto"/></a></div>
+<div class="bee-icon-label-right"><a href="" target="_blank" title="Designed with BEE"></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
